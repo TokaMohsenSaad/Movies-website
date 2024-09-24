@@ -1,0 +1,149 @@
+.head-child {
+  margin-bottom: 10px;
+  margin: auto;
+}
+
+.head {
+  border-bottom: solid 2px rgba(0, 0, 0, 0.475);
+  margin: auto;
+}
+
+.line-break {
+  border: 1px solid black;
+  text-decoration: solid;
+}
+
+.menu {
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10000;
+  overflow-y: auto;
+  background-color: #000;
+}
+
+.navbar-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-items li {
+  padding: 15px 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.navbar-items li p {
+  position: relative;
+  z-index: 3;
+  transition: all 0.5s ease-in-out;
+  color: #fff;
+}
+
+.navbar-items li:hover p,
+.active p {
+  color: rgb(0, 187, 255);
+}
+
+.active p {
+  color: rgb(0, 187, 255) !important;
+}
+
+/* Remove span effect on hover */
+.navbar-items li span {
+  display: none;
+}
+
+/* CSS for the fixed button */
+#fixedButton {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  height: 100vh;
+  width: 60px;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+}
+
+/* Slide animations */
+@keyframes slideIn {
+  from {
+    left: -250px;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    left: 0;
+  }
+  to {
+    left: -250px;
+  }
+}
+
+.recipe-img {
+  overflow: hidden;
+  position: relative;
+  height: 0;
+  /* padding-bottom: 150%; Adjust the aspect ratio as needed */
+}
+
+.recipe-box img {
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+
+.recipe-box:hover img {
+  transform: scale(1.07);
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  object-fit: cover;
+}
+
+.recipe-box:hover .backdrop {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.recipe-box:hover .overlay {
+  opacity: 1;
+}
